@@ -76,12 +76,13 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("mdtool — 파일을 Markdown으로")
         self.resize(1100, 800)
-        self._build_ui()
 
         self._refresh_timer = QTimer(self)
         self._refresh_timer.setSingleShot(True)
         self._refresh_timer.setInterval(350)
         self._refresh_timer.timeout.connect(self._refresh)
+
+        self._build_ui()
 
     def _build_ui(self) -> None:
         central = QWidget()
